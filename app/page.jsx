@@ -59,7 +59,7 @@ export default async function Home() {
     <section className="py-20 px-4">
       <div  className="max-w-7xl mx-auto text-center">
         <button  className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-6 py-2 rounded-full text-sm font-medium mb-6" >
-             <Link href="https://digitalheroesco.com" className="text-red-700">Built For Digital Heroes</Link>
+             Made With ❤️ By Muzahir Ali
         </button>
 
           <h2 className="text-5xl font-bold text-gray-900 mb-4 tracking-tight">
