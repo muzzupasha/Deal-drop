@@ -2,10 +2,11 @@ import AddProductForm from "@/components/AddProductForm";
 import AuthButton from "@/components/AuthButton";
 import { Button } from "@/components/ui/button";
 import { createClient } from "@/utils/supabase/server";
-import { Bell, LogIn, Rabbit, Shield, TrendingDown } from "lucide-react";
+import { Bell, LogIn, Mail, Rabbit, Shield, TrendingDown } from "lucide-react";
 import Image from "next/image";
 import { getProducts } from "./actions";
 import ProductCard from "@/components/ProductCard";
+import Link from "next/link";
 
 export default async function Home() {
  
@@ -38,7 +39,7 @@ export default async function Home() {
   ];
 
   return (
-   <main className="min-h-screen bg-linear-to-br from-orange-50 via-white to-orange-50">
+   <main className="min-h-screen flex flex-col bg-linear-to-br from-orange-50 via-white to-orange-50">
     <header className="bg-white/80 backdrop-blue-sm border-b border-gray-200 sticky top-0 z-10 ">
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex item-center gap-3">
@@ -57,9 +58,9 @@ export default async function Home() {
     {/* Hero Section */}
     <section className="py-20 px-4">
       <div  className="max-w-7xl mx-auto text-center">
-        <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-6 py-2 rounded-full text-sm font-medium mb-6">
-            Made with ❤️ by Muzahir Ali
-          </div>
+        <button  className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-6 py-2 rounded-full text-sm font-medium mb-6" >
+             <Link href="https://digitalheroesco.com" className="text-red-700">Built For Digital Heroes</Link>
+        </button>
 
           <h2 className="text-5xl font-bold text-gray-900 mb-4 tracking-tight">
             Never Miss a Price Drop
@@ -127,6 +128,28 @@ export default async function Home() {
           </div>
         </section>
       )}
+
+      {/* Footer */}
+      <footer className="mt-auto border-t border-gray-150 bg-white/60 backdrop-blur-md py-6 px-4">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-gray-500 flex items-center gap-1.5">
+            <span>Name -</span>
+          
+            <span className="font-semibold text-gray-800 hover:text-orange-600 transition-colors duration-200">
+              Muzahir Ali
+            </span>
+          </p>
+          <div className="flex items-center gap-3">
+            <a
+              href="mailto:muzahirraza509@gmail.com"
+              className="group flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-50 hover:bg-orange-100 border border-orange-100 hover:border-orange-200 text-sm text-gray-600 hover:text-orange-700 transition-all duration-300 shadow-xs"
+            >
+              <Mail className="w-4 h-4 text-orange-500 group-hover:scale-110 transition-transform duration-200" />
+              <span className="font-medium">muzahirraza509@gmail.com</span>
+            </a>
+          </div>
+        </div>
+      </footer>
    </main>
   );
 }
